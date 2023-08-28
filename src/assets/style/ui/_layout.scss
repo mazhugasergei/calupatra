@@ -1,0 +1,8 @@
+:root{
+  --wrapper-padding-inline: 2.5rem
+}
+
+header, footer, section{
+  padding-left: var(--wrapper-padding-inline);
+  padding-right: var(--wrapper-padding-inline);
+}
