@@ -4,7 +4,17 @@
   margin: 0;
 }
 
+:root{
+  --dvh: 100dvh;
+}
+
+body{
+  height: 200vh;
+}
+
 @import "./ui/layout";
 @import "./ui/typography";
+@import "./ui/animations";
 @import "./ui/buttons";
 @import "./components/header";
+@import "./pages/home/hero";
