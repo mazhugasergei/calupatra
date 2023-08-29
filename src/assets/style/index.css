@@ -14,7 +14,7 @@ body {
 }
 
 :root {
-  --wrapper-padding-inline: 2.5rem ;
+  --wrapper-padding-inline: 1rem ;
 }
 
 header, footer, section {
@@ -31,17 +31,22 @@ a {
   text-decoration: none;
 }
 
+button, .btn {
+  cursor: pointer;
+}
+
 button {
+  background: none;
   border: none;
 }
 
-button, .btn {
-  cursor: pointer;
+.btn {
   display: inline-block;
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 600;
   background: #fff;
+  border-radius: 0.2rem;
   padding: 1.125rem 1.65rem;
 }
 
@@ -53,7 +58,7 @@ header {
   align-items: center;
   justify-content: space-between;
   transition: 0.15s;
-  padding-block: 1rem;
+  padding-block: 0.75rem;
 }
 header .logo {
   text-transform: uppercase;
@@ -61,6 +66,49 @@ header .logo {
   color: #fff;
   font-size: 1.2rem;
   letter-spacing: 0.125rem;
+  padding: 0.25rem 0;
+}
+header .menu-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+}
+header .menu-btn .lines-cont {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+}
+header .menu-btn .lines-cont .line {
+  width: inherit;
+  height: 0.125rem;
+  background: #fff;
+}
+header .menu-btn .lines-cont .line:nth-child(2) {
+  transition: margin 0.15s, opacity 0s;
+}
+header .menu-btn .lines-cont .line:nth-child(1), header .menu-btn .lines-cont .line:nth-child(3) {
+  transition: 0.15s;
+}
+header .menu-btn.menu-closed .line:nth-child(2) {
+  transition-delay: 0.15s;
+  margin: 0.4rem 0;
+}
+header .menu-btn.menu-opened .line:nth-child(2) {
+  transition-delay: 0s, 0.15s;
+  opacity: 0;
+  margin: -0.125rem 0;
+}
+header .menu-btn.menu-opened .line:nth-child(1), header .menu-btn.menu-opened .line:nth-child(3) {
+  transition-delay: 0.15s;
+}
+header .menu-btn.menu-opened .line:nth-child(1) {
+  transform: rotate(-45deg);
+}
+header .menu-btn.menu-opened .line:nth-child(3) {
+  transform: rotate(45deg);
 }
 
 section.hero {
